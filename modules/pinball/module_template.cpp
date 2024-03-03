@@ -1,6 +1,8 @@
 //=====[Libraries]=============================================================
 
-#include "module_template.h"
+#include "pinball.h"
+#include "flippers.h"
+#include "user_interface.h"
 
 //=====[Declaration of private defines]========================================
 
