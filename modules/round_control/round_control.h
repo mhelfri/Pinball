@@ -1,7 +1,7 @@
 //=====[#include guards - begin]===============================================
 
-#ifndef _MODULE_TEMPLATE_H_
-#define _MODULE_TEMPLATE_H_
+#ifndef _ROUND_CONTROL_H_
+#define _ROUND_CONTROL_H_
 
 //=====[Declaration of public defines]=========================================
 
@@ -11,4 +11,4 @@
 
 //=====[#include guards - end]=================================================
 
-#endif // _MODULE_TEMPLATE_H_
+#endif // _ROUND_CONTROL_H_
