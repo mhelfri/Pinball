@@ -1,6 +1,8 @@
 //=====[Libraries]=============================================================
 
-#include "module_template.h"
+#include "flipper.h"
+#include "round_control.h"
+#include "servo_motor.h"
 
 //=====[Declaration of private defines]========================================
 
