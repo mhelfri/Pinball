@@ -5,22 +5,10 @@
 
 #include "user_interface.h"
 
-#include "code.h"
-#include "siren.h"
-#include "smart_home_system.h"
-#include "fire_alarm.h"
-#include "date_and_time.h"
-#include "temperature_sensor.h"
-#include "gas_sensor.h"
-#include "matrix_keypad.h"
+#include "round_control.h"
+#include "point_accumulation.h"
 #include "display.h"
-#include "GLCD_fire_alarm.h"
-#include "GLCD_intruder_alarm.h"
-#include "motor.h"
-#include "gate.h"
-#include "motion_sensor.h"
-#include "alarm.h"
-#include "intruder_alarm.h"
+
 
 //=====[Declaration of private defines]========================================
 
