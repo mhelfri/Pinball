@@ -1,6 +1,6 @@
 //=====[Libraries]=============================================================
 
-#include "module_template.h"
+#include "point_accumulation.h"
 
 //=====[Declaration of private defines]========================================
 
