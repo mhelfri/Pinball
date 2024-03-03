@@ -1,7 +1,7 @@
 //=====[#include guards - begin]===============================================
 
-#ifndef _ALARM_H_
-#define _ALARM_H_
+#ifndef _PINBALL_H_
+#define _PINBALL_H_
 
 //=====[Declaration of public defines]=========================================
 
@@ -9,10 +9,6 @@
 
 //=====[Declarations (prototypes) of public functions]=========================
 
-void alarmInit();
-void alarmUpdate();
-bool alarmStateRead();
-
 //=====[#include guards - end]=================================================
 
-#endif // _ALARM_H_
+#endif // _PINBALL_H_
