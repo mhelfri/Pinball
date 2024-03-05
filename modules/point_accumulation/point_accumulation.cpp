@@ -1,5 +1,8 @@
 //=====[Libraries]=============================================================
 
+#include "mbed.h"
+#include "arm_book_lib.h"
+
 #include "point_accumulation.h"
 
 //=====[Declaration of private defines]========================================
