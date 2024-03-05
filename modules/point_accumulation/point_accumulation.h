@@ -9,6 +9,10 @@
 
 //=====[Declarations (prototypes) of public functions]=========================
 
+void pointInit();
+void pointIncrement();
+void pointClear();
+
 //=====[#include guards - end]=================================================
 
 #endif // _POINT_ACCUMULATION_H_
