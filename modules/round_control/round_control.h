@@ -9,6 +9,9 @@
 
 //=====[Declarations (prototypes) of public functions]=========================
 
+void roundStateWrite( bool state );
+bool roundStateRead();
+
 //=====[#include guards - end]=================================================
 
 #endif // _ROUND_CONTROL_H_
