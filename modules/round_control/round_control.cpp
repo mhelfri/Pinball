@@ -13,6 +13,8 @@
 
 //=====[Declaration of external public global variables]=======================
 
+bool roundState = false;
+
 //=====[Declaration and initialization of public global variables]=============
 
 //=====[Declaration and initialization of private global variables]============
@@ -21,4 +23,13 @@
 
 //=====[Implementations of public functions]===================================
 
+void roundStateWrite( bool state )
+{
+    roundState = state;
+}
+
+bool roundStateRead()
+{
+    return roundState;
+}
 //=====[Implementations of private functions]==================================
