@@ -42,4 +42,14 @@ void pointClear()
     pointInit();
 }
 
+int currentPointRead()
+{
+    return currentPoints;
+}
+
+int previousPointRead()
+{
+    return previousPoints;
+}
+
 //=====[Implementations of private functions]==================================

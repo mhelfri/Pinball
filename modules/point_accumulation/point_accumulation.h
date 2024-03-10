@@ -12,6 +12,8 @@
 void pointInit();
 void pointIncrement();
 void pointClear();
+int currentPointRead();
+int previousPointRead();
 
 //=====[#include guards - end]=================================================
 
