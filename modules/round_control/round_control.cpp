@@ -14,7 +14,7 @@
 //=====[Declaration of external public global variables]=======================
 
 bool roundState = false;
-bool previousRoundState = true;
+bool previousRoundState = false;
 
 //=====[Declaration and initialization of public global variables]=============
 
@@ -23,6 +23,11 @@ bool previousRoundState = true;
 //=====[Declarations (prototypes) of private functions]========================
 
 //=====[Implementations of public functions]===================================
+void roundInit()
+{
+    roundState = false;
+    previousRoundState = false;
+}
 
 void roundStateWrite( bool state )
 {

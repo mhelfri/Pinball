@@ -3,7 +3,7 @@
 #include "mbed.h"
 #include "arm_book_lib.h"
 
-#include "flipper.h"
+#include "flippers.h"
 #include "round_control.h"
 #include "servo_motor.h"
 
