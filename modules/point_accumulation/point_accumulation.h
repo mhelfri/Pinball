@@ -11,7 +11,7 @@
 
 void pointInit();
 void pointIncrement();
-void pointClear();
+void setEqual();
 int currentPointRead();
 int previousPointRead();
 

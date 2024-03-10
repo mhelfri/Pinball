@@ -11,6 +11,8 @@
 
 void roundStateWrite( bool state );
 bool roundStateRead();
+bool previousRoundStateRead();
+void previousRoundEqual();
 
 //=====[#include guards - end]=================================================
 

@@ -32,6 +32,7 @@ static void userInterfaceDisplayUpdate();
 
 void userInterfaceInit()
 {
+    pointInit();
     userInterfaceDisplayInit();
 }
 
@@ -46,7 +47,7 @@ static void userInterfaceDisplayInit()
 {
     displayInit();
     displayCharPositionWrite( 0,0 );
-    displayStringWrite("Round Ongoing")
+    displayStringWrite("Round Ongoing");
     displayCharPositionWrite(0,1);
     displayStringWrite("Points:");
 }
@@ -59,23 +60,25 @@ static void userInterfaceDisplayUpdate()
 
     if( accumulatedDisplayTime >= DISPLAY_REFRESH_TIME_MS ){
         accumulatedDisplayTime = 0;
-
-        sprintf(pointString, "%.0f" , currentPointRead() )
+        sprintf(pointString, "%.0f" , currentPointRead() );
         
 
         if( roundStateRead() ) {
-            if(currentPoints != previousPoints){
+            if(currentPointRead() != previousPointRead()){
+                setEqual();
                 displayCharPositionWrite(8,1);
-                displayStringWrite( pointString )
+                displayStringWrite( pointString );
             }
+        }
+        else{
+            if( previousRoundStateRead() ){
+                previousRoundEqual();
+                displayCharPositionWrite(0,0);
+                displayStringWrite("Round Over   ");
+            }
+        }
     }
     else {
         accumulatedDisplayTime = accumulatedDisplayTime + 10;
     }
-
-}
-
-static void engineIndicatorUpdate()
-{
-    engineLed = engineState;
 }

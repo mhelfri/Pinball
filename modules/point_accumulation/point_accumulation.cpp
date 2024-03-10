@@ -33,13 +33,13 @@ void pointInit()
 }
 
 void pointIncrement()
-{
+{   
     currentPoints = previousPoints + POINT_INCREMENT;
 }
 
-void pointClear()
+void setEqual()
 {
-    pointInit();
+    currentPoints = previousPoints;
 }
 
 int currentPointRead()
