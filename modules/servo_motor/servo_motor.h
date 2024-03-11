@@ -10,8 +10,8 @@
 #define DUTY_LEFT_MIN       .021
 #define DUTY_LEFT_MAX       .1079
 
-#define DUTY_RIGHT_66       .04
-#define DUTY_LEFT_66        .04
+#define DUTY_RIGHT_FLIP      .097
+#define DUTY_LEFT_FLIP       .04
 
 //=====[Declaration of public data types]======================================
 

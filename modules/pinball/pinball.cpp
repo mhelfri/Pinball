@@ -20,4 +20,14 @@
 
 //=====[Implementations of public functions]===================================
 
+void pinballInit()
+{
+    userInterfaceInit();
+}
+
+void pinballUpdate()
+{
+    userInterfaceUpdate();
+}
+
 //=====[Implementations of private functions]==================================

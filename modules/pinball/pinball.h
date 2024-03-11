@@ -11,6 +11,9 @@
 
 //=====[Declarations (prototypes) of public functions]=========================
 
+void pinballInit();
+void pinballUpdate();
+
 //=====[#include guards - end]=================================================
 
 #endif // _PINBALL_H_

@@ -29,6 +29,8 @@ typedef enum {
 
 DigitalIn roundButton(D12);
 DigitalIn testPointButton(D13);
+DigitalOut roundOne(D14);
+DigitalOut roundTwo(D15);
 
 //=====[Declaration of external public global variables]=======================
 
@@ -56,6 +58,8 @@ void userInterfaceInit()
 {   
     roundButton.mode(PullUp);
     testPointButton.mode(PullUp);
+    roundOne = true;
+    roundTwo = true;
     pointInit();
     roundInit();
     userInterfaceDisplayInit();
@@ -82,12 +86,12 @@ static void userInterfaceDisplayInit()
 static void userInterfaceDisplayUpdate()
 {   
     static int accumulatedDisplayTime = 0;
-    static int nDigits = floor(log10(abs( currentPointRead() ))) + 1;
-    static char pointString[nDigits] = "";
+    char pointString[10] = "";
+    double pointDouble = currentPointRead() * 1.0;
 
     if( accumulatedDisplayTime >= DISPLAY_REFRESH_TIME_MS ){
         accumulatedDisplayTime = 0;
-        sprintf(pointString, "%.0f" , currentPointRead() );
+        sprintf(pointString, "%.0f" , pointDouble );
         
 
         if( roundStateRead() ) {
@@ -119,14 +123,39 @@ static void userInterfaceRoundUpdate()
 {
     bool roundSwitch = roundButtonUpdate();
     if( roundSwitch ){
-        roundStateWrite( !roundStateRead() )
+        roundStateWrite( !roundStateRead() );
+        switch(roundCountRead()){
+            case -1:
+             roundOne = true;
+             roundTwo = true;
+             displayCharPositionWrite(8,1);
+             displayStringWrite("0      ");
+             break;
+            
+            case 0:
+             roundOne = false;
+             roundTwo = true;
+             break;
+
+            case 2:
+             roundCountReset();
+             roundOne = false;
+             roundTwo = false;
+             pointInit();
+             break;
+            
+            default:
+             break;
+        }
     }
 }
 
 static void userInterfacePointUpdate()
 { 
-    if( testPointButton == 0 ){
-        pointIncrement();
+    if(roundStateRead()){
+        if( testPointButton == 0 ){
+         pointIncrement();
+        }
     }
 }
 

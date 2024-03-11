@@ -29,7 +29,7 @@ int previousPoints = 0;
 void pointInit()
 {
     currentPoints = 0;
-    previousPoints = 0;
+    previousPoints = -20;
 }
 
 void pointIncrement()
@@ -39,7 +39,7 @@ void pointIncrement()
 
 void setEqual()
 {
-    currentPoints = previousPoints;
+    previousPoints = currentPoints;
 }
 
 int currentPointRead()

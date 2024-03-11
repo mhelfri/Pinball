@@ -9,10 +9,13 @@
 
 //=====[Declarations (prototypes) of public functions]=========================
 
+void roundInit();
 void roundStateWrite( bool state );
 bool roundStateRead();
 bool previousRoundStateRead();
 void previousRoundEqual();
+int roundCountRead();
+void roundCountReset();
 
 //=====[#include guards - end]=================================================
 

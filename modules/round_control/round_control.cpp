@@ -15,6 +15,7 @@
 
 bool roundState = false;
 bool previousRoundState = false;
+int roundCount = -2;
 
 //=====[Declaration and initialization of public global variables]=============
 
@@ -23,6 +24,7 @@ bool previousRoundState = false;
 //=====[Declarations (prototypes) of private functions]========================
 
 //=====[Implementations of public functions]===================================
+
 void roundInit()
 {
     roundState = false;
@@ -33,6 +35,7 @@ void roundStateWrite( bool state )
 {
     previousRoundState = roundState;
     roundState = state;
+    roundCount++;
 }
 
 void previousRoundEqual()
@@ -48,5 +51,15 @@ bool roundStateRead()
 bool previousRoundStateRead()
 {
     return previousRoundState;
+}
+
+int roundCountRead()
+{
+    return roundCount;
+}
+
+void roundCountReset()
+{
+    roundCount = -2;
 }
 //=====[Implementations of private functions]==================================
