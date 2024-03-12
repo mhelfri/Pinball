@@ -41,6 +41,7 @@ DigitalOut roundTwo(D15);
 static int accumulatedDebounceButtonTime     = 0;
 static int numberOfEnterButtonReleasedEvents = 0;
 buttonState_t roundButtonState;
+static int limitCount = 0;
 
 //=====[Declarations (prototypes) of private functions]========================
 
@@ -87,7 +88,7 @@ static void userInterfaceDisplayUpdate()
 {   
     static int accumulatedDisplayTime = 0;
     char pointString[10] = "";
-    double pointDouble = currentPointRead() * 1.0;
+    static double pointDouble = currentPointRead() * 1.0;
 
     if( accumulatedDisplayTime >= DISPLAY_REFRESH_TIME_MS ){
         accumulatedDisplayTime = 0;
@@ -123,29 +124,33 @@ static void userInterfaceRoundUpdate()
 {
     bool roundSwitch = roundButtonUpdate();
     if( roundSwitch ){
-        roundStateWrite( !roundStateRead() );
-        switch(roundCountRead()){
-            case -1:
-             roundOne = true;
-             roundTwo = true;
-             displayCharPositionWrite(8,1);
-             displayStringWrite("0      ");
-             break;
+        limitCount++;
+        if(limitCount == 2){
+            limitCount = 0;
+            roundStateWrite( !roundStateRead() );
+            switch(roundCountRead()){
+                case -1:
+                 roundOne = true;
+                 roundTwo = true;
+                 displayCharPositionWrite(8,1);
+                 displayStringWrite("0      ");
+                 break;
             
-            case 0:
-             roundOne = false;
-             roundTwo = true;
-             break;
+                case 0:
+                 roundOne = false;
+                 roundTwo = true;
+                 break;
 
-            case 2:
-             roundCountReset();
-             roundOne = false;
-             roundTwo = false;
-             pointInit();
-             break;
+                case 2:
+                 roundCountReset();
+                 roundOne = false;
+                 roundTwo = false;
+                 pointInit();
+                 break;
             
-            default:
-             break;
+                default:
+                 break;
+            }
         }
     }
 }

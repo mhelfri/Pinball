@@ -29,7 +29,7 @@ int previousPoints = 0;
 void pointInit()
 {
     currentPoints = 0;
-    previousPoints = -20;
+    previousPoints = currentPoints - POINT_INCREMENT;
 }
 
 void pointIncrement()

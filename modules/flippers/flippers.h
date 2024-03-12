@@ -9,6 +9,9 @@
 
 //=====[Declarations (prototypes) of public functions]=========================
 
+void flippersInit();
+void flippersUpdate();
+
 //=====[#include guards - end]=================================================
 
 #endif // _FLIPPERS_H_
