@@ -23,11 +23,13 @@
 void pinballInit()
 {
     userInterfaceInit();
+    flippersInit();
 }
 
 void pinballUpdate()
 {
     userInterfaceUpdate();
+    flippersUpdate();
 }
 
 //=====[Implementations of private functions]==================================

@@ -6,8 +6,8 @@
 //=====[Declaration of public defines]=========================================
 
 #define DUTY_RIGHT_MIN      .021
-#define DUTY_RIGHT_MAX      .1098
-#define DUTY_LEFT_MIN       .021
+#define DUTY_RIGHT_MAX      .109
+#define DUTY_LEFT_MIN       .025
 #define DUTY_LEFT_MAX       .1079
 
 #define DUTY_RIGHT_FLIP      .097
